@@ -23,7 +23,7 @@ After logining, We access to  the admin’s page, It is a website to check the a
 ```
 
 From  Dockerfile, we can know that it build website by unit NGINX Unit.
-[[Configuration — NGINX Unit](https://unit.nginx.org/configuration/#examples)]
+[Configuration — NGINX Unit](https://unit.nginx.org/configuration/#examples)
 
 And then we can change the language by use socket server
 ```json
@@ -101,3 +101,6 @@ From overlap the object of request, we can send a specific json data to  cover  
 To make the flag reflect the path of page. Finally, visiting the root to get flag
 
 ![avatar](img/003.png)
+
+## Reference
+- [几则NodeJS的安全问题 – Wupco’s Blog](http://www.wupco.cn/?p=4520)
