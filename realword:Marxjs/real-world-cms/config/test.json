@@ -1,0 +1,7 @@
+{
+  "database": {
+    "database": "real_world_test",
+    "dropSchema": true,
+    "synchronize": true
+  }
+}

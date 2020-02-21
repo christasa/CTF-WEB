@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "loggerFormat": "none"
+  },
+  "database": {
+    "database": "real_world_e2e",
+    "dropSchema": true,
+    "synchronize": true
+  }
+}
