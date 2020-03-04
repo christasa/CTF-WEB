@@ -1,0 +1,11 @@
+def sql_login(username,password):
+    conn=sqlite3.connect("database.db")
+    c=conn.cursor()
+    curser=c.execute("select password from users where username='{}' limit 1;".format(sql_filter(username)))
+    for row in curser:
+        if row[0]==md5encode(password):
+            conn.close()
+            return True
+        else:
+            conn.close()
+            return False

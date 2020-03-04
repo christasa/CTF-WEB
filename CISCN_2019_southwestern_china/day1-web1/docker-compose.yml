@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  web:
+    build: .
+    image: ciscn_2019_southeastern_china_day1_web1
+    restart: always
+    ports:
+      - "8003:8003"
+

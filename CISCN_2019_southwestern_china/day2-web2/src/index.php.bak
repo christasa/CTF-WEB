@@ -1,0 +1,32 @@
+<?php
+if(isset($_SESSION['ans']) && isset($_POST['ans'])){
+	if(($_SESSION['ans'])+intval($_POST['input'])!=$_POST['ans']){
+		session_destroy();
+		echo '
+		<script language="javascript">  
+		alert("wrong result you know it !");  
+		window.history.back(-1);  </script>';
+	}
+	else{
+		if(intval(time())-$_SESSION['time']<2){
+			session_destroy();
+			echo '
+			<script language="javascript">  
+			alert("So fast my friend !");  
+			window.history.back(-1); </script> ';
+		}
+		if(intval(time())-$_SESSION['time']>3){
+			session_destroy();
+			echo '
+			<script language="javascript">  
+			alert("You are a bit of slow");  
+			window.history.back(-1); </script> ';
+		}
+		echo '
+		<script language="javascript">  
+		alert("right answer");  
+	     </script> ';
+		$_SESSION['count']++;
+	}
+}
+?>
