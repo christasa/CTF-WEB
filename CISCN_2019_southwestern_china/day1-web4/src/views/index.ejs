@@ -1,0 +1,123 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title>Index</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Broad Band Price Table, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup 
+Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+		 }
+		 
+		 function mywrite() {
+			var data = document.getElementById("reasons").value;
+			var len = data.length;
+			var date = new Date().toLocaleString();
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/api/write", true);
+			xhr.setRequestHeader('content-type', 'application/json');
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					if (xhr.responseText == "OK!") {
+						myread();
+					}
+				}
+			}
+			xhr.send(JSON.stringify({"reasons":data,"len":len,"date":date}));
+		 }
+
+		 function myread() {
+			var file = document.getElementById("file").innerText;
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/api/read", true);
+			xhr.setRequestHeader('content-type', 'application/json');
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					if (xhr.responseText != "Error!") {
+						var data = JSON.parse(xhr.responseText);
+						document.getElementById("len").innerHTML = '<i class="fas fa-calendar-alt"></i>' + data.len;
+						document.getElementById("date").innerHTML = '<i class="fas fa-tachometer-alt"></i>' + data.date;
+						document.getElementById("reasons_box").innerHTML = '<i class="fas fa-server" style="padding-top: 2%;float: left;"></i><div style="overflow: scroll;width: 70%;float: left;">' + data.reasons + '</div>';
+					}
+				}
+			}
+			xhr.send(JSON.stringify({"file":file}));
+		 }
+    </script>
+			<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+			<!-- font-awesome icons -->
+			<link rel="stylesheet" href="/static/css/fontawesome-all.css">
+			<!-- Font-Awesome-Icons-CSS -->
+			<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+			<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+</head>
+<body style="background: url(/static/images/photo1.jpg);background-size: cover;">
+
+<div class="main">
+			<div class="main-heading w3ls">
+				<h1>Why you want to reach my <a href="/shop">shop</a>?</h1>
+				<h5 style="text-align: center;color:#fff;">I will listen to your reasons and check if you can access to my shop.</h5>
+			</div>
+			<div class="pricing-table">
+				<div class="pricing">
+					<div class="price-top clr1 w3ls">
+						<h3>Write</h3>
+					</div>
+					<div class="price-bottom ">
+						
+						<div class="price2">
+						<ul>
+							<li><i class="fas fa-server"></i><%- role %></li>
+							<li><i class="fas fa-calendar-alt"></i><input type="text" placeholder="input your reasons here" style="color:#fff;background:none; outline:none;border:0px;" id="reasons"></li>
+						</ul>
+								<a class="clr1 button" style="cursor:pointer" onclick="mywrite()">Finish</a>
+						</div>
+					</div>
+				</div>
+			<div class="pricing pri2">
+			</div>
+				
+				<div class="pricing pri3 w3ls">
+					<div class="price-top clr3">
+						<h3>Read</h3>
+					</div>
+					<div class="price-bottom">
+					
+						<div class="price2">
+						<ul>
+							<li style="text-transform:none;" id="file"><i class="fas fa-download"></i><%- file %></li>
+							<li id="len"></li>
+							<li id="date"></li>
+							<li id="reasons_box"></li>
+							<script>myread();</script>
+						</ul>
+							<a class="clr3 button" style="cursor:pointer" onclick="myread()">refresh</a>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+		</div>	
+					<div class="clear"></div>
+		<div class="footer w3ls">
+			<p>&copy 2018 Broad Band Price Table. All rights reserved.</p>
+		</div>
+</body>
+</html>
+<!-- /var/www/web/server.js -->
+<!-- If you want some hints, you can read /hint -->
+<!-- Not XSS or CSRF! -->

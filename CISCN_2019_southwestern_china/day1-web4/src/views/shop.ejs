@@ -1,0 +1,129 @@
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title>Magic Shop</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Broad Band Price Table, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup 
+Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+		 }
+		 
+		 function myget(id) {
+			var data = {
+				1: "In the world of magic, star sand is always used to cast magic, which can make you more easily to do it.",
+				2: "With Tsukishiro Hitomi's magic, you are able to enter the world of painting, please enjoy the world which you never seen.",
+				3: "You have get all the feature of the website, now you can try to get the flag!"
+			}
+			var name = {
+				1: "Magic Star",
+				2: "Magic Drawing",
+				3: "Magic FLAG"
+			}
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/shop", true);
+			xhr.setRequestHeader('content-type', 'application/json');
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					if (xhr.responseText == "OK!") {
+						var r =confirm("You have got it, do you want to go to /profile to check?");
+						if (r) {
+							location.href = "/profile";
+						} else {
+							location.reload();
+						}
+					}
+				}
+			}
+			xhr.send(JSON.stringify({"id":id,"name":name[id],"data":data[id]}));
+		 }
+    </script>
+			<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+			<!-- font-awesome icons -->
+			<link rel="stylesheet" href="/static/css/fontawesome-all.css">
+			<!-- Font-Awesome-Icons-CSS -->
+			<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+			<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+</head>
+<body style="background: url(/static/images/photo2.jpg);background-size: cover;">
+
+<div class="main">
+			<div class="main-heading w3ls">
+				<h1>Magic Shop</h1>
+			</div>
+			<div class="pricing-table">
+				<div class="pricing">
+					<div class="price-top clr1 w3ls">
+						<h3>Magic Star</h3>
+					</div>
+					<div class="price-bottom ">
+						
+						<div class="price2">
+					<ul>
+							<li><i class="fas fa-download"></i>Many Star Sand</li>
+							<li><i class="fas fa-calendar-alt"></i>little</li>
+							<li><i class="fas fa-tachometer-alt"></i>disposable</li>
+							<li style="text-transform:none;"><i class="fas fa-server"></i>Can be used to cast magic.</li>
+						</ul>
+							<a style="<%- id == 1 ? 'pointer-events:none;' : 'cursor:pointer;' %>" class="clr1 button" onclick="myget(1)"><%- id == 1 ? '√' : 'GET IT' %></a>
+						</div>
+					</div>
+				</div>
+			<div class="pricing pri2">
+					<div class="price-top clr2">
+						<h3>Magic Drawing</h3>
+					</div>
+				<div class="price-bottom">
+					
+					<div class="price2 w3ls">
+						<ul>
+							<li><i class="fas fa-download"></i>A painting</li>
+							<li><i class="fas fa-calendar-alt"></i>Big</li>
+							<li><i class="fas fa-tachometer-alt"></i>reusable</li>
+							<li style="text-transform:none;"><i class="fas fa-server"></i>Entry the world of drawing and enjoy the fantastic scenery.</li>
+						</ul>
+						<a style="<%- id == 2 ? 'pointer-events:none;' : 'cursor:pointer;' %>" class="clr2 button" onclick="myget(2)"><%- id == 2 ? '√' : 'GET IT' %></a>
+					</div>
+				</div>
+			</div>
+				
+				<div class="pricing pri3 w3ls">
+					<div class="price-top clr3">
+						<h3>Magic FLAG</h3>
+					</div>
+					<div class="price-bottom">
+					
+						<div class="price2">
+						<ul>
+							<li><i class="fas fa-download"></i>Not CTF FLAG</li>
+							<li><i class="fas fa-calendar-alt"></i>Nil</li>
+							<li><i class="fas fa-tachometer-alt"></i>Useless</li>
+							<li style="text-transform:none;"><i class="fas fa-server"></i>Under developing...</li>
+						</ul>
+							<a style="<%- id == 3 ? 'pointer-events:none;' : 'cursor:pointer;' %>" class="clr3 button" onclick="myget(3)"><%- id == 3 ? '√' : 'GET IT' %></a>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+		</div>	
+					<div class="clear"></div>
+		<div class="footer w3ls">
+			<p>&copy 2018 Broad Band Price Table. All rights reserved.</a></p>
+		</div>
+</body>
+</html>
