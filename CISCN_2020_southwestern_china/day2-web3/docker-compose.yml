@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  web:
+    build: .
+    image: ciscn_2020_southeastern_china_day2_web3
+    ports:
+      - "8001:80"
+      - "9000:9000"

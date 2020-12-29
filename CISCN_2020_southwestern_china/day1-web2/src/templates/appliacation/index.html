@@ -1,0 +1,20 @@
+{% extends 'appliacation/my_base.html' %}
+<html lang="en">
+
+{% block head %} {{ super() }}
+<style type="text/css">
+    .divcss5 {
+        text-align: center
+    }
+</style>
+{% endblock %} {% block page_content %}
+<div class="page-header">
+    <h1>欢迎来到卡塞尔学院<br>信息化疫情防控平台</h1>
+    <h2>Hello，{{name}}，今天是 {{ datetime }}</h2>
+    <h2><a href={{ url_for( 'kseonline.func_user') }}>点击链接</a>生成每日健康报告</h2>
+</div>
+<div class="divcss5"><img src={{ url_for( 'static', filename='img/logo.jpg' ) }} width="380" height="380" /></div>
+{% endblock %}
+</body>
+
+</html>

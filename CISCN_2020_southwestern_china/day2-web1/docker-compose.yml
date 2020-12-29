@@ -1,0 +1,7 @@
+version: '3'
+services:
+ web:
+   build: .
+   image: ciscn_2020_southeastern_china_day2_web1
+   ports:
+    - "8085:80"

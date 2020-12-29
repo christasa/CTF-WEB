@@ -1,0 +1,12 @@
+{% extends 'appliacation/my_base.html' %} {% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+
+{% block page_content %}
+<form action={{ url_for( 'kseonline.GetInfo') }} method="post">
+    {{ wtf.quick_form(form) }}
+
+</form>
+{% endblock %}
+</body>
+
+</html>
