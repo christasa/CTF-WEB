@@ -14,7 +14,7 @@
     "express-session": "^1.16.1",
     "express-unless": "^0.5.0",
     "fs": "0.0.1-security",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "randomatic": "^3.1.1",
     "session-file-store": "^1.2.0"
   }
